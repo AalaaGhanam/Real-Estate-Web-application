@@ -1,0 +1,75 @@
+﻿
+<!DOCTAYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+   
+    <title>Profile | Customer</title>
+    <link rel="stylesheet" href="~/Content/layout_cus_je.css">
+    <link rel="stylesheet" href="~/Content/style_customer_je.css">
+    <link rel="stylesheet" href="~/Content/popup.css">
+    <script type="text/javascript" src="~/Content/script.js"></script>
+</head>
+<body>
+    <table class="index">
+
+        <!------------start Header------------->
+        <thead class="header">
+            <!------------start logo------------->
+            <tr class="row1_logo">
+                <th colspan="2">
+                    <div class="logo">
+                        <div class="container">
+                            <img class="img" src="~/img/logo5.png" alt="logo">
+                            <h2>Real<span> Estate</span></h2>
+
+                            <ul>
+                                <li>@Html.ActionLink("Log Out", "Login", "RegisterLogin")</li>
+                 
+                            </ul>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+
+            <!------------end logo------------->
+            <!--------------start navbar ---------------->
+            <tr class="row2_navbar">
+                <td class="navbar" colspan="2">
+                    <nav class="nav">
+                        <div class="bar-block">
+                            <ul>
+                                <li>@Html.ActionLink("Home", "CustomerHome", "Customer")</li>
+                                <li>@Html.ActionLink("Profile", "Index", "Customer")</li>
+                                <li>@Html.ActionLink("Add Project", "AddProject","Customer")</li> 
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </td>
+            </tr>
+            <!--------------end navbar ---------------->
+           
+
+</thead>
+      
+        <!------------end Header------------->
+        <!------------start Body------------->
+        <tbody class="body">
+            <tr>
+                @RenderBody();
+            </tr>
+
+</tbody>
+        <!------------end Body------------->
+
+    </table>
+
+   
+
+</body>
+</html>
+
+

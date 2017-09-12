@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RealState2.Models.Project>
+
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_layout_admin.cshtml";
+}
+
+<h2>Home Page</h2>
+<table class="table_admin">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.Approval == true && item.Assign == false)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+    </tr>
+    }
+}
+
+</table>

@@ -1,0 +1,234 @@
+﻿@model IEnumerable<RealState2.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_customer.cshtml";
+}
+
+
+
+<tr>
+
+    <td class="row3_col1_about_project">
+        <h4>All Projects Not Approved</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Approval == false && item.Assign == false && item.Delivered == false && item.CustomerName == Session["UserName"].ToString())
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete Project", "DeleteProject", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+         <!---->
+        <h4>All Approved Projects And Not Assigned</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Approval == true  && item.PMAccept == false && item.Delivered == false && item.CustomerName == Session["UserName"].ToString())
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit Or Assign", "AssignProject", new { id = item.ID }) |
+                            @Html.ActionLink("Delete Project", "DeleteProject", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+      
+        <h4>Requests</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    Project Manager Name
+                </th>
+                <th>
+                    Project Name
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Approval == true && item.Assign == true && item.PMAccept == true && item.CustomerName == Session["UserName"].ToString())
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PMName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+
+        <h4>Current Project</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Approval == true && item.Assign == true && item.PMAccept == true && item.Delivered == false && item.CustomerName == Session["UserName"].ToString())
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+
+        <h4>History Project</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comment)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Approval == true && item.Assign == true && item.Delivered == true && item.CustomerName == Session["UserName"].ToString() & item.PMAccept == true)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comment)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </td>
+
+                <td class="row3_col2" >
+                    <center>
+                        <div class="actor_info">
+                            <img src="~/img/1494361103_user.png">
+                            <p>
+                                <h2>
+                                    @if (Session["ID"] != null)
+            {@Session["UserName"]<br /> @Session["FirstName"] <br />@Session["LastName"] <br />@Session["Email"] <br />
+                @Session["Mobile"]<br />@Session["JobDescription"] }
+                                </h2>
+                            </p>
+                        </div>
+
+                    </center>
+                </td>
+
+            </tr>

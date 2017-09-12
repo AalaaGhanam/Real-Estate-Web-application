@@ -1,0 +1,48 @@
+.index 
+{ 
+     width: 100%;
+}
+.index .header
+{
+    height: 150px;   
+}
+ .index .header .row1_logo .logo
+{
+  
+    height: 110px;
+    color: #fff;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #00478d;
+}
+.index .body .row2_col2_navbar 
+{
+    width: 12%;
+    background-color:  #367dc3;
+    padding-top:10px;
+    vertical-align: top;
+    overflow: hidden;
+    font-size: 19px;
+    text-transform: capitalize;
+}
+.body .row2_col1,
+.body .row3_col1_about_project
+{
+    width:75%;
+     height: auto;
+     
+}
+
+/*start footer*/
+.footer
+{
+   background-color:#00478d;
+   color: #fff;
+   padding: 10px;
+   text-align: center;
+   text-transform: capitalize;
+   margin-bottom: auto;    
+}
+/*end footer*/
+

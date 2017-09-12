@@ -1,0 +1,138 @@
+﻿@model RealState2.Models.Project
+
+@{
+    ViewBag.Title = "ApproveProject";
+    Layout = "~/Views/Shared/_layout_admin.cshtml";
+}
+
+<h2>Approve Project</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.CustomerName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.PMName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.TLName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.JEName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.Price)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.Date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+              @Html.HiddenFor(model => model.Code)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+               @Html.HiddenFor(model => model.Comment)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Approval, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Approval)
+                    @Html.ValidationMessageFor(model => model.Approval, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="checkbox">
+                   @Html.HiddenFor(model => model.PMAccept)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+                <div class="checkbox">
+                   @Html.HiddenFor(model => model.TLAccept)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="checkbox">
+                   @Html.HiddenFor(model => model.JEAccept)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="checkbox">
+                @Html.HiddenFor(model => model.Delivered)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.Feedback)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Profile", "Index")
+</div>

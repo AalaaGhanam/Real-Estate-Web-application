@@ -1,0 +1,67 @@
+﻿@model RealState2.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/layout_home.cshtml";
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+   
+    
+        <div class="form-horizontal">
+            <h4>User</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.JobRole, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.JobRole, new List<SelectListItem>
+                            {
+                             new SelectListItem () {Text ="Customer",Value="Customer" },
+                             new SelectListItem () {Text ="Admin",Value="Admin" },
+                              new SelectListItem () {Text ="PM",Value="PM" },
+                               new SelectListItem () {Text ="TL",Value="TL" },
+                                new SelectListItem () {Text ="JE",Value="JE" }
+                             })
+
+                    @Html.ValidationMessageFor(model => model.JobRole, "", new { @class = "text-danger" })
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                   <input type="submit" value="Login" class="btn btn-default" /> 
+                </div>
+            </div>
+        </div>
+        }
+
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

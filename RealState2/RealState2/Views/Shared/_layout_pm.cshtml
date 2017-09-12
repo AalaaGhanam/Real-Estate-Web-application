@@ -1,0 +1,95 @@
+﻿<!DOCTAYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Profile | Admin</title>
+    <link rel="stylesheet" href="~/Content/style_admin_pm_tl.css">
+    <link rel="stylesheet" href="~/Content/layout_ad_pm_tl.css">
+    <link rel="stylesheet" href="~/Content/popup.css">
+    <script type="text/javascript" src="~/Content/script.js"></script>
+</head>
+<body>
+    <table class="index">
+
+        <!------------start Header------------->
+        <thead class="header">
+            <!------------start logo------------->
+            <tr class="row1_logo" >
+                <th colspan="2">
+                    <div class="logo">
+                        <div class="container">
+                            <img class="img" src="~/img/logo5.png" alt="logo">
+                            <h2>Real<span> Estate</span></h2>
+
+                            <ul>
+                                <li>@Html.ActionLink("Log Out", "Login", "RegisterLogin")</li>
+                            
+                            </ul>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+            <!------------end logo------------->
+        </thead>
+        <!------------end Header------------->
+        <!------------start Body------------->
+        <tbody class="body">
+
+            <tr>
+                <!--------------start info admin ---------------->
+
+                <td class="row2_col1">
+                    @RenderBody();
+
+
+                </td>
+
+                <!--------------end info admin ---------------->
+                <!--------------start navbar ---------------->
+                <td class="row2_col2_navbar">
+
+                
+                        <nav class="nav">
+                            <div class="bar-block">
+                                <ul>
+                                    <li>@Html.ActionLink("Home", "PMHome", "PM")</li>
+                                    <li>@Html.ActionLink("Profile", "Index", "PM")</li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+
+                        </nav>
+
+                    
+                    </td>
+</tr>
+            <!--------------end navbar ---------------->
+            <!--------------start about project ---------------->
+          
+
+        </tbody>
+        <!------------end Body------------->
+        <!------------start Footer------------->
+        <tfoot class="footer">
+            <tr>
+
+                <th colspan="2">
+                    <div class="footer">
+                        <div class="container">
+                            coptright &copy; 2017  Real Estate
+                        </div>
+                    </div>
+                </th>
+
+            </tr>
+        </tfoot>
+        <!------------end Footer------------->
+
+    </table>
+   
+
+    
+</body>
+</html>

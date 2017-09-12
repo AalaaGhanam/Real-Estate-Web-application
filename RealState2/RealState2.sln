@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealState2", "RealState2\RealState2.csproj", "{FFB37B31-9F1C-4EEF-A084-E419853389B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFB37B31-9F1C-4EEF-A084-E419853389B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB37B31-9F1C-4EEF-A084-E419853389B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB37B31-9F1C-4EEF-A084-E419853389B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB37B31-9F1C-4EEF-A084-E419853389B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

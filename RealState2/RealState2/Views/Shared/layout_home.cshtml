@@ -1,0 +1,120 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTAYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="~/Content/styleHome.css">
+    <link rel="stylesheet" href="~/Content/popup.css">
+    <script type="text/javascript" src="~/Content/script.js"></script>
+</head>
+<body>
+    <table class="index">
+
+        <!------------start Header------------->
+        <thead class="header">
+            <!------------start logo------------->
+            <tr>
+                <th colspan="2">
+                    <div class="logo">
+                        <div class="container">
+                            <img class="img" src="~/img/logo5.png" alt="logo">
+                            <h2>Real<span> Estate</span></h2>
+
+                            <ul>
+                                <li><a href="#" onclick="showDiv()">Sign in</a></li>
+                                <li>@Html.ActionLink("Sign Up", "Register", "RegisterLogin")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+            <tr>
+
+            <tr>
+                <!--------------start navbar ---------------->
+
+                <td class="navbar" rowspan="2">
+                    <nav class="nav">
+                        <div class="bar-block">
+                            <ul>
+                                <li>@Html.ActionLink("Home", "Login", "RegisterLogin")</li>
+                                <li>@Html.ActionLink("About", "About", "RegisterLogin")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "RegisterLogin")</li>
+                            </ul>
+                        </div>
+                    </nav>
+                </td>
+                <!--------------end navbar ---------------->
+
+            </tr>
+            <!------------end logo------------->
+        </thead>
+        <!------------end Header------------->
+        <!------------start Body------------->
+        <tbody class="body">
+
+            <tr>
+                <!--------------start about project ---------------->
+                <td class="about_home" rowspan="2">
+                    <div class="main-text">
+                        <h1>
+                            <p>
+                                Helping You To <br>
+                                Find The Right Property.
+                            </p>
+                        </h1>
+                    </div>
+                    <h3>
+                        <p>We allow customers that have projects
+                        <p>and want to establish it in to communicate and hire project managers</p>
+                        <p>and Team leaders to accomplish and deliver their projects in an easy and fast way.</p>
+                    </h3>
+                </td>
+                <!--------------end  about project ---------------->
+
+            </tr>
+            <tr></tr>
+
+        </tbody>
+        <!------------end Body------------->
+        <!------------start Footer------------->
+        <tfoot class="footer">
+            <tr>
+
+                <th colspan="2">
+                    <div class="footer">
+                        <div class="container">
+                            <p>SOCIAL LINKS</p>
+
+                            <a href="https://www.facebook.com"><img src="img/facebook.png" width="20px" height="20px"></a>
+                            <a href="https://www.twitter.com"><img src="img/twiiter.png" width="20px" height="20px"></a>
+                            <a href="https://www.youtube.com"><img src="img/youtube.png" width="20px" height="20px"></a><br>
+
+                            coptright &copy; 2017  Real Estate
+                        </div>
+                    </div>
+                </th>
+
+            </tr>
+        </tfoot>
+        <!------------end Footer------------->
+
+    </table>
+
+    <!-- start popup sign in-->
+    <div id="windowpopup">
+        <div id="wpcontent">
+            @RenderBody();
+            
+        </div>
+        <!-- end popup sign in-->
+    </div>
+
+</body>
+</html>

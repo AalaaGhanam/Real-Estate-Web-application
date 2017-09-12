@@ -1,0 +1,147 @@
+﻿
+
+@{ 
+    Layout = null;
+}
+
+<!DOCTAYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="~/Content/styleHome.css">
+    <link rel="stylesheet" href="~/Content/popup.css">
+    <script type="text/javascript" src="~/Content/script.js"></script>
+</head>
+<body>
+    <table class="index">
+
+        <!------------start Header------------->
+        <thead class="header">
+            <!------------start logo------------->
+            <tr>
+                <th colspan="2">
+                    <div class="logo">
+                        <div class="container">
+                            <img class="img" src="img/logo5.png" alt="logo">
+                            <h2>Real<span> Estate</span></h2>
+
+                            <ul>
+                                <li><a href="~/Views/RegisterLogin/Login.cshtml" onclick="showDiv()">Sign in</a></li>
+                                <li>@Html.ActionLink("Sign Up", "Register", "RegisterLogin")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+            <tr>
+
+            <tr>
+                <!--------------start navbar ---------------->
+
+                <td class="navbar" rowspan="2">
+                    <nav class="nav">
+                        <div class="bar-block">
+                            <ul>
+                                <li><a href="Home.html">Home</a> </li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </td>
+                <!--------------end navbar ---------------->
+
+            </tr>
+            <!------------end logo------------->
+        </thead>
+        <!------------end Header------------->
+        <!------------start Body------------->
+        <tbody class="body">
+
+            <tr>
+                <!--------------start about project ---------------->
+                <td class="about_home" rowspan="2">
+                    <div class="main-text">
+                        <h1>
+                            <p>
+                                Helping You To <br>
+                                Find The Right Property.
+                            </p>
+                        </h1>
+                    </div>
+                    <h3>
+                        <p>We allow customers that have projects
+                        <p>and want to establish it in to communicate and hire project managers</p>
+                        <p>and Team leaders to accomplish and deliver their projects in an easy and fast way.</p>
+                    </h3>
+                </td>
+                <!--------------end  about project ---------------->
+
+            </tr>
+            <tr></tr>
+
+        </tbody>
+        <!------------end Body------------->
+        <!------------start Footer------------->
+        <tfoot class="footer">
+            <tr>
+
+                <th colspan="2">
+                    <div class="footer">
+                        <div class="container">
+                            <p>SOCIAL LINKS</p>
+
+                            <a href="https://www.facebook.com"><img src="img/facebook.png" width="20px" height="20px"></a>
+                            <a href="https://www.twitter.com"><img src="img/twiiter.png" width="20px" height="20px"></a>
+                            <a href="https://www.youtube.com"><img src="img/youtube.png" width="20px" height="20px"></a><br>
+
+                            coptright &copy; 2017  Real Estate
+                        </div>
+                    </div>
+                </th>
+
+            </tr>
+        </tfoot>
+        <!------------end Footer------------->
+
+    </table>
+
+    <!-- start popup sign in-->
+    <div id="windowpopup">
+        <div id="wpcontent">
+
+            <form class="form">
+
+                <legend> Construction and Real Estate Sign In </legend><hr><br>
+
+                <label> Username  : </label><br>
+                <input type="text" name=" username" required="required"><br>
+
+                <label> Job Role : </label><br>
+                <div class="custom-select">
+                    <select>
+
+                        <option value="1">Customer</option>
+                        <option value="2">Project Manager</option>
+                        <option value="3">Team Leader</option>
+                        <option value="4">Junior Engineers</option>
+                    </select>
+                </div>
+
+                <label> Password : </label><br>
+                <input type="password" name="Password" required="required"><br>
+
+                <div class="button">
+                    <a href="#" class="btn btn-half">Sign In</a>
+                    <a href="#" class="close btn-half" onclick="document.getElementById('windowpopup').style.display='none'">Close</a>
+                </div>
+
+            </form>
+        </div>
+        <!-- end popup sign in-->
+    </div>
+
+</body>
+</html>

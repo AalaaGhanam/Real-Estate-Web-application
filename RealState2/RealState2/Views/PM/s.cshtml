@@ -1,0 +1,41 @@
+﻿@model IEnumerable <RealState2.Models.User >
+
+@{
+    ViewBag.Title = "s";
+    Layout = null;
+}
+
+<h2>Search</h2>
+<h4>To Search For Jounior Engineers "JE" And To Search For Team Leaders "TL":</h4>
+<p>
+    @using (Html.BeginForm())
+            {
+    <p>
+        Name: @Html.TextBox("searchstring")
+        <input type="submit" value="Search" />
+    </p>
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                <h4>UserName</h4>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.JobRole == "TL" || item.JobRole == "JE")
+            { 
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.UserName)
+
+                </td>
+            </tr>
+            }
+
+        }
+            @Html.ActionLink("Back", "CreateTeam")
+</table>

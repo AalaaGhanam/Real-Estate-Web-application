@@ -1,0 +1,231 @@
+﻿@model IEnumerable<object>
+
+@{
+    List<RealState2.Models.User> MUser = Model.ToList()[0] as List<RealState2.Models.User>;
+    List<RealState2.Models.Project> MProject = Model.ToList()[1] as List<RealState2.Models.Project>;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout_tl.cshtml";
+}
+<center>
+    <div class="actor_info">
+        <img src="~/img/1494361103_user.png">
+        <p>
+            <h2>
+                @if (Session["ID"] != null)
+            {@Session["UserName"]<br /> @Session["FirstName"] <br />@Session["LastName"] <br />@Session["Email"] <br />
+            @Session["Mobile"]<br />@Session["JobDescription"] }
+            </h2>
+        </p>
+        <br /><img src='@Url.Action("PieCart", "TL")' alt="Chart" />
+    </div>
+
+</center>
+<h4>Project Request</h4>
+<table class="table_pm">
+    <tr>
+        <th>
+            CustomerName
+        </th>
+        <th>
+            PM Name
+        </th>
+        <th>
+            Project Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Date
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in MProject)
+    {
+        if (item.TLName == Session["UserName"].ToString() && item.TLAccept == false && item.PMAccept == true && item.Approval == true && item.Delivered == false && item.Assign == true)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Accept or Reject", "AcceptOrReject", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+<br />
+    <h4>Send Rquest To JE</h4>
+    <table class="table_pm">
+        <tr>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+
+        </tr>
+        @foreach (var item in MProject)
+        {
+            if (item.Delivered == false && item.TLAccept == true && item.TLName == Session["UserName"].ToString() && item.PMAccept == true && item.Approval == true && item.JEAccept == false && item.Assign == true)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Send Request", "HelpPM", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+<h4>Current Project and Not Delivered Yet</h4>
+<table class="table_pm">
+    <tr>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            JE Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Feedback
+        </th>
+        <th></th>
+
+
+    </tr>
+    @foreach (var item in MProject)
+    {
+        if (item.Delivered == false && item.TLAccept == true && item.TLName == Session["UserName"].ToString() && item.PMAccept == true && item.Approval == true && item.JEAccept == true && item.Assign == true)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.JEName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Feedback)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit Team", "EditTeam", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+<br />
+<h4>History Project and Delivered</h4>
+<table class="table_pm">
+    <tr>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Feedback
+        </th>
+        <th>
+            Price
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in MProject)
+    {
+        if (item.Delivered == true && item.TLAccept == true && item.TLName == Session["UserName"].ToString() && item.PMAccept == true && item.Approval == true && item.JEAccept == true && item.Assign == true)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Feedback)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+<br />

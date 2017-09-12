@@ -1,0 +1,36 @@
+.index 
+{ 
+     width: 100%;
+}
+.index .header .row1_logo
+{
+    height: 110px;
+    color: #fff;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #00478d;
+}
+.index .header .row2_navbar
+{
+   height: 50px; 
+   background-color:#367dc3;
+}
+.index .body .col1_about_project,
+.index .body .col2_info
+{
+    height: auto;  
+}
+.body .col1_about
+{
+     width:75%;
+     height: auto;
+     padding-left: 50px;    
+}
+.body .col2_info
+
+{
+    width: 30%;
+    border-left: 2px solid #00478d;
+    vertical-align: top;
+}

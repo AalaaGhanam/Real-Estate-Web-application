@@ -1,0 +1,177 @@
+.index .header .row1_logo .logo .img
+{
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+}
+.index .header .row1_logo .logo h2
+{
+    float: left;
+    text-transform: uppercase;
+    margin: 35px 0;
+    font-size: 30px;  
+}
+.index .header .row1_logo .logo h2 span
+{
+    color: #a2ccf2;
+}
+.index .header .row1_logo .logo ul
+{
+    list-style: none;
+    padding-left: 0px;
+    overflow: hidden;
+    float: right;
+}
+.index .header .row1_logo .logo ul li
+{
+    font-size: 15px;
+    text-transform: capitalize;
+    float: left;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+.index .header .row1_logo .logo ul li a
+
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.index .header .row1_logo .logo ul li.active a
+
+{
+    color: #00478d;
+}
+
+
+.index .header .row2_navbar .navbar .nav ul
+{
+     list-style: none;
+    padding-left: 0px;
+    overflow: hidden;
+    float:left;
+ 
+}
+.index .header .row2_navbar .navbar .nav ul li
+{
+    font-size: 25px;
+    text-transform: capitalize;
+    float: left;
+    padding-left: 30px;
+}
+.index .header .navbar .nav ul li a
+{
+    color: #fff;
+    text-decoration: none;
+}
+.index .header .navbar .nav ul li.active a,
+.index .header .navbar .nav ul li a:hover
+{
+    color: #ffd584;
+}
+h4
+{
+    font-size: 20;
+    background-color: #ffd584;
+    width: 94%;
+    height: auto;
+    color: #0359ad;
+    margin-top: 20px;
+    padding:5px;
+
+}
+.row3_col2 
+{
+    width:25%;
+    vertical-align:top;
+
+}
+.row3_col2 .actor_info{
+    margin:50px;
+
+}
+
+.table
+{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+
+   
+}
+.table tr th
+{
+    text-transform: uppercase;
+    color: #00478d ;
+    background-color: #4DD0E1;
+    
+}
+.table tr:nth-child(even)
+{
+    background-color: #E0F7FA;
+}
+.table tr th,
+.table tr td
+{
+    border-bottom: 1px solid #367dc3;
+    text-align: left;
+    padding: 8px;
+   
+}
+
+
+.form_admin
+{
+    font-family: sans-serif;
+    font-size: 20px; 
+    padding: 20px;
+    font-family:inherit  ;
+      
+}
+
+legend
+{
+    
+    font-size: 30px;
+    color:#353535;
+    padding: 10px;
+    text-align: center;
+    
+}  
+
+label
+{
+     color:#303030;
+    font-style:normal; 
+    font-size: 20px;
+    
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="submit"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+#search_TL_JE
+{
+    
+    width: 400px;
+    height: auto;
+    padding: 7px;
+    margin-bottom: 20px;             
+                  
+}
+            
+input[type="submit"]
+{
+     width: 80px;
+     height: auto;
+     color: #2c2c2c;
+    font-size: 20px;
+    font-style:normal;
+    
+}
+

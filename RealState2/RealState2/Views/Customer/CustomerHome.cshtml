@@ -1,0 +1,146 @@
+﻿@model IEnumerable<RealState2.Models.Project>
+
+@{
+    ViewBag.Title = "CustomerHome";
+    Layout = "~/Views/Shared/layout_customer.cshtml";
+}
+<p>
+    @Html.ActionLink("new projects", "AddProject")
+</p>
+
+<tr>
+    <td class="row3_col2">
+        @Html.Partial("AddP", new RealState2.Models.Project());
+    </td>
+    <td class="row3_col1_about_project">
+
+        <h2>All Project</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    CustomerName
+                </th>
+                <th>
+                    PM Name
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Comments
+                </th>
+                <th>
+                    Report
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.CustomerName == Session["UserName"].ToString() && item.Assign == false && item.Submit == false && item.Approval == true)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PMName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comments)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Report)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Assign", "AssignProject", new { id = item.ID }) |
+
+
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+        <h2>Submit Project</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    CustomerName
+                </th>
+                <th>
+                    PM Name
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Comments
+                </th>
+                <th>
+                    Report
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.CustomerName == Session["UserName"].ToString() && item.Assign == false && item.Submit == true && item.Approval == true)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PMName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comments)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Report)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Assign", "AssignProject", new { id = item.ID }) |
+
+
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+        </td>
+    </tr>
